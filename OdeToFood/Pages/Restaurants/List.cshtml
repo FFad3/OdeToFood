@@ -1,0 +1,21 @@
+﻿@page
+@model OdeToFood.Pages.Restaurants.ListModel
+@{
+}
+<h1>Restaurants</h1>
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach(var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>@restaurant.Name</td>
+            <td>@restaurant.Location</td>
+            <td>@restaurant.Cuisine</td>
+        </tr>
+    }
+</table>
