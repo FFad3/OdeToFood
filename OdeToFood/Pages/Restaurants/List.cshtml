@@ -2,15 +2,26 @@
 @model OdeToFood.Pages.Restaurants.ListModel
 @{
 }
-<h1>Restaurants</h1>
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Restaurant name" aria-label="Restaurant name" value="" name="searchTerm">
+              <div class="input-group-append">
+                <button class="btn btn-default">Search</button>
+              </div>
+        </div>
+    </div>
+</form>
 
 <table class="table">
     <tr>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Cuisine</th>
+
     </tr>
-    @foreach(var restaurant in Model.Restaurants)
+    @foreach(var restaurant in Model.restaurants)
     {
         <tr>
             <td>@restaurant.Name</td>
