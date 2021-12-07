@@ -20,10 +20,14 @@ namespace OdeToFood.Pages.Restaurants
 
         public Restaurant Restaurant { get; set; }
 
-        public void OnGet(int restaurantId)
+        public IActionResult OnGet(int restaurantId)
         {
-            Restaurant = new();
-            Restaurant.Id = restaurantId;
+            Restaurant=_restaurantData.GetRestaurantById(restaurantId);
+            if(Restaurant is null)
+            {
+                return RedirectToPage("./NotFound");
+            }
+            return Page();
         }
     }
 }
