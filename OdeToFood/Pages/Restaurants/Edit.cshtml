@@ -1,4 +1,4 @@
-﻿@page "{restaurantId:int}"
+﻿@page "{restaurantId:int?}"
 @model OdeToFood.Pages.Restaurants.EditModel
 @{
 }
@@ -7,18 +7,21 @@
 <form method="post">
     <input type="hidden" asp-for="Restaurant.Id" />
     <div class="form-group">
-        <label asp-for="Restaurant.Name" />
+        <label asp-for="Restaurant.Name"></label>
         <input asp-for="Restaurant.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Restaurant.Name"/>
     </div>
     <div class="form-group">
-        <label asp-for="Restaurant.Location" />
+        <label asp-for="Restaurant.Location"></label>
         <input asp-for="Restaurant.Location" class="form-control" />
+        <span class="text-danger" asp-validation-for="Restaurant.Location" />
     </div>
     <div class="form-group">
-        <label asp-for="Restaurant.Cuisine" />
+        <label asp-for="Restaurant.Cuisine"></label>
         <select asp-for="Restaurant.Cuisine" class="form-control" asp-items="Model.Cuisines">
-
         </select>
+        <span class="text-danger" asp-validation-for="Restaurant.Cuisine" />
     </div>
     <button type="submit" class="btn btn-outline-primary">Save</button>
+    <a asp-page="./List" class="btn btn-outline-primary">All restaurants</a>
 </form>

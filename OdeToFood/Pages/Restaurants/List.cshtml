@@ -23,7 +23,7 @@
 
     </tr>
     @foreach(var restaurant in Model.restaurants)
-    {
+     {
         <tr>
             <td>@restaurant.Name</td>
             <td>@restaurant.Location</td>
@@ -34,5 +34,7 @@
 
             </td>
         </tr>
-    }
+     }
 </table>
+
+<a asp-page="./Edit" class="btn btn-outline-primary">Add restaurant</a>
