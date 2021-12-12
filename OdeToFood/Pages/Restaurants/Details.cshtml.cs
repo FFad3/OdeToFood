@@ -13,6 +13,8 @@ namespace OdeToFood.Pages.Restaurants
     {
         private readonly IRestaurantData _restaurantData;
 
+        public Restaurant Restaurant { get; set; }
+
         [TempData]
         public string Message { get; set; }
 
@@ -21,7 +23,6 @@ namespace OdeToFood.Pages.Restaurants
             _restaurantData = restaurantData;
         }
 
-        public Restaurant Restaurant { get; set; }
 
         public IActionResult OnGet(int restaurantId)
         {
